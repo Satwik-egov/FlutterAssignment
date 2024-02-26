@@ -1,9 +1,6 @@
 import "package:assignment/models/locations.dart";
 import "package:country_flags/country_flags.dart";
 import "package:flutter/material.dart";
-import 'package:azlistview/src/index_bar.dart';
-import 'dart:math';
-
 
 void main(){
   runApp(MyApp());
@@ -34,16 +31,16 @@ class _LocationWidgetState extends State<LocationWidget> {
   }
 
   static List<LocationModel> location_list = [
-    LocationModel('Bangalore', "IND", false),
-    LocationModel('Frankfurt', 'AFG', false),
-    LocationModel('Amsterdam', 'NED', false),
-    LocationModel('Saint-Eithenne','FRA', false),
-    LocationModel('Paris', 'FRA', false),
-    LocationModel('Mumbai', 'IND', false),
-    LocationModel('Hanoi', 'VNM', false),
-    LocationModel('Texas', 'USA', false),
-    LocationModel('Cape Town', 'RSA', false),
-    LocationModel('Pondicherry', 'IND', false),
+    LocationModel('Bangalore', 'IN', false),
+    LocationModel('Frankfurt', 'DE', false),
+    LocationModel('Amsterdam', 'NL', false),
+    LocationModel('Saint-Eithenne','FR', false),
+    LocationModel('Paris', 'FR', false),
+    LocationModel('Mumbai', 'IN', false),
+    LocationModel('Hanoi', 'VN', false),
+    LocationModel('Texas', 'US', false),
+    LocationModel('Cape Town', 'SA', false),
+    LocationModel('Pondicherry', 'IN', false),
   ];
 
   List<LocationModel> display_list = List.from(location_list);
@@ -199,7 +196,7 @@ class _LocationWidgetState extends State<LocationWidget> {
                     ),
         
                     Expanded(
-                      child: Row(
+                      child: Column(
                         children: [
                           Expanded(
                               child: ListView.builder(
@@ -215,7 +212,6 @@ class _LocationWidgetState extends State<LocationWidget> {
                                     ),
                                     title: Row(
                                       children: [
-                                        Text(display_list[index].country_name!),
                                         SizedBox(
                                           width: 10,
                                         ),
@@ -229,13 +225,8 @@ class _LocationWidgetState extends State<LocationWidget> {
                                                 fontWeight: FontWeight.bold)),
                                       ],
                                     ),
-
                                   ),
-
                               )
-                          ),
-                          IndexBar(
-                            data: fillIndexes(),
                           ),
                         ],
                       ),
